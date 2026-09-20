@@ -1,0 +1,34 @@
+
+{
+    "firstName": "Karthik",
+    "lastName": "Thulasimani",
+    "dateOfBirth": "1998-12-15",
+    "country": "India",
+    "postalCode": "600001",
+    "houseNumber": 10,
+    "street": "Main Street",
+    "city": "Chennai",
+    "state": "Tamil Nadu",
+    "phone": "9876543210",
+    "email": "karthikthulasimani48@gmail.com",
+    "password": "Testr@12345",
+
+    "bankDetails": {
+        "bankName": "ICICI",
+        "accountName": "Karthik T",
+        "accountNumber": "0987654321"
+    },
+
+    "creditCardDetails": {
+        "cardNumber": "0000-0000-0000-0000",
+        "expirationDate": "12/2026",
+        "cvv": "123",
+        "cardHolderName": "karthik t"
+    },
+
+    "giftCardDetails": {
+        "giftCardNumber": "1234567890098765",
+        "validationCode": "0987"
+    }
+}
+
