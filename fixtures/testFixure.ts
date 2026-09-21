@@ -72,8 +72,5 @@ test.beforeEach(async ({ page }) => {
 
     });
 
-    // Reload Application
-    await page.reload({waitUntil: 'domcontentloaded'});
-
 });
 

@@ -9,43 +9,35 @@ export class LoginPage {
 
     // Constructor
     constructor(private page: Page) {
-
         this.locators = new LoginLocators(page);
     }
 
     // Open Login
     async openLoginPage() {
-
-        await this.page.goto('/auth/login');
+        await this.page.goto('/auth/login', {
+            waitUntil: 'domcontentloaded',
+            timeout: 30000
+        });
     }
 
     // Login
     async login(email: string, password: string) {
-
         await this.locators.email.fill(email);
-
         await this.locators.password.fill(password);
-
         await this.locators.loginButton.click();
     }
 
     // Verify Login
     async verifyLoginSuccess() {
-
         await this.page.waitForURL('**/account', {timeout: 15000});
-
         await expect(this.locators.pageTitle).toHaveText('My account', {timeout: 15000});
     }
 
     // Sign Out
     async signOut() {
-
         await this.locators.userDropdown.click();
-
         await this.locators.signOut.click();
-
         await this.page.waitForLoadState('networkidle');
-
         console.log('URL after Sign Out:', this.page.url());
     }
 }
