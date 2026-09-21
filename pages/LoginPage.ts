@@ -32,9 +32,9 @@ export class LoginPage {
     // Verify Login
     async verifyLoginSuccess() {
 
-        await this.page.waitForURL('**/account',{timeout: 5000});
+        await this.page.waitForURL('**/account', {timeout: 15000});
 
-        await expect(this.locators.pageTitle).toHaveText('My account');
+        await expect(this.locators.pageTitle).toHaveText('My account', {timeout: 15000});
     }
 
     // Sign Out

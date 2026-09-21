@@ -62,7 +62,7 @@ export const test = base.extend<TestFixture>({
 test.beforeEach(async ({ page }) => {
 
     // Open Application
-    await page.goto('/');
+    await page.goto('/', {waitUntil: 'domcontentloaded',timeout: 30000});
 
     // Clear Browser Storage
     await page.evaluate(() => {
@@ -73,7 +73,7 @@ test.beforeEach(async ({ page }) => {
     });
 
     // Reload Application
-    await page.reload();
+    await page.reload({waitUntil: 'domcontentloaded'});
 
 });
 

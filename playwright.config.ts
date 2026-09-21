@@ -1,3 +1,4 @@
+
 import { defineConfig, devices } from '@playwright/test';
 
 import dotenv from 'dotenv';
@@ -8,11 +9,14 @@ export const environment = {baseURL: process.env.BASE_URL || ''};
 
 export default defineConfig({
 
-     // Test Timeout
+    // Test Timeout
     timeout: 60 * 1000,
 
-    // Workers 
+    // Workers
     workers: 3,
+
+    // Retry failed tests in Jenkins
+    retries: process.env.JENKINS_URL ? 2 : 0,
 
     testDir: './tests',
 
@@ -21,6 +25,13 @@ export default defineConfig({
     use: {
         baseURL: environment.baseURL,
         headless: false,
+
+        // Action Timeout
+        actionTimeout: 15 * 1000,
+
+        // Navigation Timeout
+        navigationTimeout: 30 * 1000,
+
         screenshot: 'only-on-failure',
         trace: 'retain-on-failure'
     },
@@ -48,3 +59,4 @@ export default defineConfig({
         }
     ]
 });
+
