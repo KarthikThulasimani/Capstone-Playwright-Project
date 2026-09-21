@@ -43,14 +43,22 @@ export class HomeLocators {
         // Price Range - Maximum
         this.priceRangeMax = page.locator('[role="slider"][aria-label="ngx-slider-max"]');
 
+
         // Category - Chisels
-        this.categoryChisels = page.locator('[data-test="category-01M311YPA40KWVD4FAF26C9D0C"]');
+        this.categoryChisels = page.locator('label', { hasText: 'Chisels' }).locator('input[type="checkbox"]');
 
+
+
+    
         // Brand - ForgeFlex Tools
-        this.brandForgeFlexTools = page.locator('[data-test="brand-01M311YNYZH5Q9K4J4P05NCS3S"]');
+        this.brandForgeFlexTools = page.locator('label', { hasText: 'ForgeFlex Tools' }).locator('input[type="checkbox"]');
 
-        // Sustainability - Eco Friendly Products
-        this.sustainabilityFilter = page.locator('[data-test="eco-friendly-filter"]');
+
+      
+        // Sustainability
+        this.sustainabilityFilter = page.locator('label', { hasText: 'Show only eco-friendly products' });
+
+
 
         // Categories
         this.categoriesDropdown = page.locator('[data-test="nav-categories"]');
