@@ -8,6 +8,12 @@ export const environment = {baseURL: process.env.BASE_URL || ''};
 
 export default defineConfig({
 
+     // Test Timeout
+    timeout: 60 * 1000,
+
+    // Workers 
+    workers: 3,
+
     testDir: './tests',
 
     reporter: [['html'], ['allure-playwright']],
